@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Human
+    link(rel="stylesheet", href="/static/css/styles.css", type='text/css')
+  body
+    header.header
+      nav.main-nav
+        h1.logo
+          a(href="/") Human &#8482;
+        ul.nav-ul
+          li.nav-li 
+            a(href="/employees") Employees
+          li.nav-li
+            a(href="/terminated") Terminated 
+          li.nav-li
+            a(href="/applicants") Applicants
+
+    block content
