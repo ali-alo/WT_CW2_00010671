@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #fff;
 }
 
 body {
@@ -24,7 +25,6 @@ ul {
 
 a {
   text-decoration: none;
-  color: gold;
 }
 
 .header {
@@ -34,7 +34,7 @@ a {
 }
 
 .header a:hover {
-  color: #fff;
+  color: gold;
 }
 
 .main-nav {
@@ -48,17 +48,12 @@ a {
 }
 
 .logo:hover {
-  transform: rotate(20deg);
+  transform: rotate(8deg);
   transform: 1.2em;
 }
 
 .logo > a {
   transition: all 1s;
-  color: #fff;
-}
-
-.logo > a:hover {
-  color: gold;
 }
 
 .nav-ul {
@@ -69,11 +64,108 @@ a {
   margin-right: 20px;
 }
 
-/* styling index page */
+/***** styling index page *****/
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  height: 10em;
+  margin: 5em auto;
+  background-color: #5284e7;
+  border-radius: 10px;
+}
+
+.create {
+  margin: 1em;
+  background-color: #fff;
+  padding: 1em;
+  color: #3947d5;
+  font-weight: 800;
+  box-shadow: 3px 3px rgb(82, 82, 82);
+  height: 8em;
+  vertical-align: middle;
+}
+
+.create:hover {
+  background-color: rgba(220, 252, 93, 0.651);
+  color: #3947d5;
+}
 
 .index-footer {
   font-style: italic;
   position: absolute;
   bottom: 2em;
   color: gold;
+}
+
+/***** add and edit pages (form) *****/
+
+.form {
+  margin: 2em 0;
+  width: 80%;
+  background-color: #5284e7;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 1.3em;
+  margin: 1.5em 0 0 1.5em;
+  font-style: italic;
+}
+
+.required:after {
+  content: " *";
+  color: rgb(135, 59, 59);
+}
+
+.input,
+.submit {
+  margin-left: 1.5em;
+  background-color: #3947d5;
+  outline: none;
+  font-size: 1.2em;
+  padding: 0.3em;
+  width: 80%;
+  font-style: italic;
+}
+
+.comment {
+  resize: vertical;
+  min-height: 10vh;
+}
+
+.submit {
+  width: 20%;
+  cursor: pointer;
+  margin: 3em;
+  padding: 0.5em;
+}
+
+.submit:hover {
+  background-color: #fff;
+  color: #3947d5;
+}
+
+.success,
+.error {
+  margin: 1.5em 0;
+  padding: 0.4em;
+  color: green;
+  border: 1px solid green;
+  background-color: #fff;
+  width: 66.5%;
+}
+
+.error {
+  color: red;
+  border: 1px solid red;
+}
+
+.addition {
+  color: green;
+  float: right;
 }

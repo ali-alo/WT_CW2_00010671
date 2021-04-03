@@ -1,0 +1,40 @@
+extends layout 
+
+block content
+  h1 Add an employee to the specific position
+
+  if success
+    h3.success An employee was added. 
+      span.addition Would you like to add more?
+  
+  if error
+    h3.error Couldn't add an employee.
+
+
+  form.form(action='/add' method='POST')
+    label.label.required(for='firstName') First name
+    input.input(type='text' name='firstName' id='firstName')
+
+    label.label.required(for='lastName') Last name
+    input.input(type='text' name='lastName' id='lastName')
+
+    label.label.required(for='email') Email
+    input.input(type='email' name='email' id='email')
+
+    label.label.required(for='position') Position appllied
+    select.input(name='position' id='position')
+      option(value='projectManager') Project manager
+      option(value='frontEndDeveloper') Front-end developer
+      option(value='backEndDeveloper') Back-end developer 
+      option(value='designer') Designer
+      option(value='hr') Human Resource
+
+    label.label.required(for='wage') Hourly wage
+    input.input(type='number' name='wage' id='wage' step='0.5' min='7' max='50' value='7')
+
+    label.label(for='comment') Comment
+    textarea.input.comment(name="motivationLetter", rows="5") 
+
+    input.submit(type='submit' value='Add candidate')
+
+
