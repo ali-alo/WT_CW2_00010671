@@ -1,0 +1,10 @@
+extends layout 
+
+block content 
+  h1.main-heading Employees who are currently working 
+  ul.employees-list
+    each employee in onDutyEmployees
+      li.employee
+        a.employeeName(href='/employees/' + employee.id)= employee.firstName + ' ' + employee.lastName
+        a.edit(href='/employees/' + employee.id + '/edit') Edit
+        hr

@@ -1,7 +1,7 @@
 extends layout 
 
 block content
-  h1 Add an employee to the specific position
+  h1.main-heading Add an employee to the specific position
 
   if success
     h3.success An employee was added. 
@@ -23,18 +23,18 @@ block content
 
     label.label.required(for='position') Position appllied
     select.input(name='position' id='position')
-      option(value='projectManager') Project manager
-      option(value='frontEndDeveloper') Front-end developer
-      option(value='backEndDeveloper') Back-end developer 
-      option(value='designer') Designer
-      option(value='hr') Human Resource
+      option(value='Project manager') Project manager
+      option(value='Front-end developer') Front-end developer
+      option(value='Back-end developer') Back-end developer 
+      option(value='Designer') Designer
+      option(value='Human Resource') Human Resource
 
     label.label.required(for='wage') Hourly wage
     input.input(type='number' name='wage' id='wage' step='0.5' min='7' max='50' value='7')
 
     label.label(for='comment') Comment
-    textarea.input.comment(name="motivationLetter", rows="5") 
+    textarea.input.comment(name='comment', rows='5') 
 
-    input.submit(type='submit' value='Add candidate')
+    input.submit(type='submit' value='Add employee')
 
 

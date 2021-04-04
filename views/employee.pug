@@ -1,0 +1,37 @@
+extends layout 
+
+block content 
+  h1.main-heading Applicant information
+
+  .wrapper
+    h2.inline.key Name :  
+    h2.inline= employee.firstName + ' ' + employee.lastName
+
+  .wrapper 
+    h2.inline.key Generated ID : 
+    h2.inline= employee.id
+
+  .wrapper
+    h2.inline.key Email :  
+    h2.inline= employee.email
+
+  .wrapper
+    h2.inline.key Position : 
+    h2.inline= employee.position
+
+  .wrapper 
+    h2.inline.key Hourly wage : 
+    h2.inline= '$' + employee.wage
+
+  .wrapper
+    h2.inline.key Current status : 
+    h2.inline= employee.status
+
+  .wrapper
+    h2.inline.key Comment : 
+    h2.inline= employee.comment
+
+  a.employee-edit(href='/employees/'+employee.id+'/edit') Edit employee
+  a.terminate(href='/employees') Terminate employee 
+
+

@@ -1,0 +1,10 @@
+extends layout
+
+block content 
+  h1.main-heading Employees who were terminated
+  ul.employees-list
+    each employee in terminatedEmployees
+      li.employee
+        a.employeeName(href='#')= employee.firstName + ' ' + employee.lastName
+        a.edit(href='#') Edit
+        hr
