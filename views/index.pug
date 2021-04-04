@@ -3,8 +3,9 @@ extends layout
 block content 
   h1.main-heading This app was designed to maintain employees
   .container
-    a.create(href="/add") All employees
-    a.create(href="/add") Add an employee
+    a.link(href="/employees") All employees
+    a.link(href='/onDutyEmployees') On Duty employees
+    a.link(href="/add") Add an employee
 
   footer.index-footer
     p "This web application was created to fulfill Web Technology module’s requirements and does not represent an actual company or service"

@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+  h1.main-heading Employees who are currently working 
+  ul.employees-list
+    each employee in onDutyEmployees
+      li.employee
+        a.employeeName(href='/employees/' + employee.id)= employee.firstName + ' ' + employee.lastName
+        a.edit(href='/employees/' + employee.id + '/edit') Edit
+        hr
+
+  .section
+    a.group(href='/employees') All employees
+    a.group(href='/medicationEmployees') On Medication Employees
+    a.group(href='/vacationEmployees') On Vacation Employees

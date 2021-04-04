@@ -1,15 +1,19 @@
 extends layout 
 
 block content 
-  h1.main-heading All employees in the company
+  h1.main-heading Employees who are currently on medication
+
+  //- if there is no one who is on medication at the moment, show user-friendly message
+  if medicationEmployees.length < 1
+    h1.empty No one is currently on medication
   ul.employees-list
-    each employee in employees
+    each employee in medicationEmployees
       li.employee
         a.employeeName(href='/employees/' + employee.id)= employee.firstName + ' ' + employee.lastName
         a.edit(href='/employees/' + employee.id + '/edit') Edit
         hr
-  
+
   .section
     a.group(href='/onDutyEmployees') On Duty Employees
     a.group(href='/vacationEmployees') On Vacation Employees
-    a.group(href='/medicationEmployees') On Medication Employees
+    a.group(href='/employees') All employees

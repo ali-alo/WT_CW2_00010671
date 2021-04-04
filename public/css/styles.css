@@ -82,7 +82,7 @@ a {
   border-radius: 10px;
 }
 
-.create {
+.link {
   margin: 1em;
   background-color: #fff;
   padding: 1em;
@@ -92,7 +92,7 @@ a {
   height: 8em;
 }
 
-.create:hover {
+.link:hover {
   background-color: rgba(220, 252, 93, 0.651);
   color: #3947d5;
 }
@@ -112,6 +112,7 @@ a {
   width: 80%;
   background-color: #5284e7;
   margin-bottom: 2em;
+  position: relative;
 }
 
 .label {
@@ -126,7 +127,8 @@ a {
 }
 
 .input,
-.submit {
+.submit,
+.terminate-link {
   margin-left: 1.5em;
   background-color: #3947d5;
   outline: none;
@@ -145,12 +147,29 @@ a {
   width: 20%;
   cursor: pointer;
   margin: 3em;
-  padding: 0.5em;
+  padding: 10px 10px;
+  border: 1px solid #000;
+  box-shadow: 3px 3px #000;
 }
 
 .submit:hover {
   background-color: #fff;
   color: #3947d5;
+}
+
+.terminate-link {
+  text-align: center;
+  width: 30%;
+  position: absolute;
+  bottom: 3em;
+  right: 3em;
+  border: 1px solid #000;
+  box-shadow: 3px 3px #000;
+}
+
+.terminate-link:hover {
+  background-color: rgb(221, 144, 144);
+  color: #000;
 }
 
 .success,
@@ -186,9 +205,29 @@ a {
   float: right;
 }
 
+.empty {
+  text-align: center;
+}
+
 .employeeName:hover,
 .edit:hover {
   color: paleturquoise;
+}
+
+.section {
+  margin-top: 4em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.group {
+  border-bottom: 2px solid #fff;
+  font-size: 1.1em;
+}
+
+.group:hover {
+  border-bottom: 2px solid rgb(255, 233, 106);
+  color: rgb(255, 233, 106);
 }
 
 /***** employee information *****/
@@ -224,4 +263,22 @@ a {
 
 .terminate:hover {
   color: rgb(251, 161, 161);
+}
+
+/***** terminated employees page *****/
+
+#hire {
+  margin: 0 1em;
+}
+
+#delete:hover {
+  color: rgb(226, 120, 120);
+}
+
+#hire:hover {
+  color: rgb(118, 243, 122);
+}
+
+#view:hover {
+  color: paleturquoise;
 }

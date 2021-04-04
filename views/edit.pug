@@ -16,24 +16,32 @@ block content
     label.label.required(for='email') Email
     input.input(type='email' name='email' id='email' value=employee.email)
 
+    //- little bit advanced coding used here to show employee's position
+    //- firstly I stored all possible values and corresponding texts
+    -const positionOptions = [{value: 'Project manager', text: 'Project manager'},{value: 'Front-end developer', text: 'Front-end developer'},{value: 'Back-end developer', text: 'Back-end developer'},{value: 'Designer', text: 'Designer'},{value: 'Human Resource', text: 'Human Resource'}];
     label.label.required(for='position') Position appllied
-    select.input(name='position' id='position' value=employee.position)
-      option(value='Project manager') Project manager
-      option(value='Front-end developer') Front-end developer
-      option(value='Back-end developer') Back-end developer 
-      option(value='Designer') Designer
-      option(value='Human Resource') Human Resource
+    select.input(name='position' id='position')
+      //- now the programp loops through each possible value and if values match it will display corresponding text
+      each option in positionOptions
+        if (option.value === employee.position)
+          option(value=option.value selected) #{ option.text }
+        else
+          option(value=option.value) #{ option.text }
 
     label.label.required(for='wage') Hourly wage
-    input.input(type='number' name='wage' id='wage' step='0.5' min='7' max='50' value=employee.wage)
+    input.input(type='number' name='wage' id='wage' step='0.5' min='7' max='100' value=employee.wage)
 
+    -const statusOptions = [{value: 'On Duty', text: 'On Duty'},{value: 'Vacation', text: 'Vacation'},{value: 'Medication', text: 'Medication'}];
     label.label.required(for='status') Current status
-    select.input(name='status' id='status' value=employee.status)
-      option(value='On Duty') On Duty
-      option(value='Vacation') Vacation
-      option(value='Medication') Medication 
+    select.input(name='status' id='status')
+      each option in statusOptions
+        if (option.value === employee.status)
+          option(value=option.value selected) #{ option.text }
+        else
+          option(value=option.value) #{ option.text }
 
     label.label(for='comment') Comment
-    textarea.input.comment(name="comment", rows="5")= employee.comment 
+    textarea.input.comment(name='comment', rows='5')= employee.comment 
 
     input.submit(type='submit' value='Update employee')
+    a.terminate-link(href='/employees/' + employee.id + '/terminate') Terminate employee 

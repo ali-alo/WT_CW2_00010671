@@ -2,9 +2,14 @@ extends layout
 
 block content 
   h1.main-heading Employees who were terminated
+
+  if terminatedEmployees.length < 1
+    h1.empty This list is currently empty
   ul.employees-list
     each employee in terminatedEmployees
       li.employee
-        a.employeeName(href='#')= employee.firstName + ' ' + employee.lastName
-        a.edit(href='#') Edit
+        a.employeeName(href='/employees/' + employee.id + '/view')= employee.firstName + ' ' + employee.lastName
+        a.edit#view(href='/employees/' + employee.id + '/view') View
+        a.edit#hire(href='/employees/' + employee.id + '/hireBack') Hire back
+        a.edit#delete(href='/employees/' + employee.id + '/delete') Delete
         hr

@@ -1,7 +1,7 @@
-extends layout 
+extends layout
 
-block content 
-  h1.main-heading Employee information
+block content
+  h1.main-heading Terminated employee information
 
   .wrapper
     h2.inline.key Name :  
@@ -30,6 +30,3 @@ block content
   .wrapper
     h2.inline.key Comment : 
     h2.inline= employee.comment
-
-  a.employee-edit(href='/employees/'+employee.id+'/edit') Edit employee
-  a.terminate(href='/employees/' + employee.id + '/terminate') Terminate employee 

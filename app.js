@@ -33,7 +33,7 @@ app.post('/add', (req, res) => {
 		wage: req.body.wage,
     comment: req.body.comment,
 		// I assume newly added employee won't start with vacation
-		status: "On Duty"
+		status: "On Duty",
 	} 
 
 	employeesRepo.add(employee, (err) => {
@@ -47,13 +47,23 @@ app.post('/add', (req, res) => {
 })
 
 app.get('/employees', (req, res) => {
-	const onDutyEmployees = employeesRepo.getAllOnDuty()
-	res.render('employees', {onDutyEmployees})
+	const employees = employeesRepo.getAllEmployees()
+	res.render('employees', { employees })
 })
 
-app.get('/terminated', (req, res) => {
-	const terminatedEmployees = employeesRepo.getAllTerminated()
-	res.render('terminated', {terminatedEmployees})
+app.get('/onDutyEmployees', (req, res) => {
+	const onDutyEmployees = employeesRepo.getAllOnDuty()
+	res.render('on_duty_employees', {onDutyEmployees})
+})
+
+app.get('/vacationEmployees', (req, res) => {
+	const vacationEmployees = employeesRepo.getAllVacation()
+	res.render('vacation_employees', {vacationEmployees})
+})
+
+app.get('/medicationEmployees', (req, res) => {
+	const medicationEmployees = employeesRepo.getAllMedication()
+	res.render('medication_employees', {medicationEmployees})
 })
 
 app.get('/employees/:id', (req, res) => {
@@ -87,6 +97,56 @@ app.post('/employees/:id/edit', (req, res) => {
 			res.redirect('/employees/' + updatedEmployee.id + '/edit?error=true')
 		} else {
 			res.redirect('/employees/' + updatedEmployee.id)
+		}
+	})
+})
+
+app.get('/employees/:id/terminate', (req, res) => {
+	const id = req.params.id
+	const employee = employeesRepo.getById(id)
+
+	employeesRepo.terminate(employee.id, employee, (err) => {
+		if (err) {
+			res.redirect('/terminated?fail=true')
+		} else {
+			res.redirect('/terminated')
+		}
+	})
+})
+
+app.get('/employees/:id/hireBack', (req, res) => {
+	const id = req.params.id
+	const employee = employeesRepo.getById(id)
+
+	employeesRepo.hireBack(id, employee, (err) => {
+		if (err) {
+			res.redirect('/terminated?error=true')
+		} else {
+			res.redirect('/employees')
+		}
+	})
+})
+
+app.get('/terminated', (req, res) => {
+	const terminatedEmployees = employeesRepo.getAllTerminated()
+	res.render('terminated', {terminatedEmployees})
+})
+
+app.get('/employees/:id/view', (req, res) => {
+	const id = req.params.id
+	const employee = employeesRepo.getById(id)
+
+	res.render('view', { employee })
+})
+
+app.get('/employees/:id/delete', (req, res) => {
+	const id = req.params.id
+
+	employeesRepo.delete(id, (err) => {
+		if (err) {
+			res.redirect('/terminated?error=true')
+		} else {
+			res.redirect('/terminated')
 		}
 	})
 })
