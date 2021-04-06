@@ -94,7 +94,7 @@ class employeesRepository {
   }
 
   validInputs(employee){
-    if(employee.firstName.trim() === '' || employee.lastName.trim() === '' || employee.wage < 7 || employee.wage > 100){
+    if(employee.firstName.trim() === '' || employee.lastName.trim() === '' || employee.email.trim() === '' || employee.wage < 7 || employee.wage > 100){
       return false
     } else {
       return true

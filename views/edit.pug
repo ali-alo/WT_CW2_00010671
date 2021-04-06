@@ -4,7 +4,7 @@ block content
   h1.main-heading Update information about an applicant
 
   if error
-    h3.error Couldn't update an employee.
+    h3.error Couldn't update an employee. Please check your inputs
 
   form.form(action='/employees/' + employee.id + '/edit' method='POST')
     label.label.required(for='firstName') First name

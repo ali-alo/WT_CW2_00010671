@@ -123,7 +123,8 @@ a {
 
 .required:after {
   content: " *";
-  color: rgb(135, 59, 59);
+  color: rgb(238, 23, 23);
+  font-style: normal;
 }
 
 .input,
@@ -282,3 +283,9 @@ a {
 #view:hover {
   color: paleturquoise;
 }
+
+/* @media screen (min-width: 900px) and (max-width: 1200px){
+  body {
+    font-size: 15px;
+  }
+} */
