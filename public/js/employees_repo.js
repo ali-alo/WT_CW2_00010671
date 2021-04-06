@@ -11,6 +11,7 @@ class employeesRepository {
 		})
   }
 
+  // function for adding an employee to the json file
   add(employee, callback) {
     employee.id = this.generateRandomId()
 
@@ -18,6 +19,7 @@ class employeesRepository {
       this.employeesDb.push(employee)
       this.updateFile(callback)
     } else {
+      // in case of errors do not add to the file and let the user know
       employee.invalidInput = true;
       callback()
     }

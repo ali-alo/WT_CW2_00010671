@@ -35,3 +35,7 @@
 ### Link to the github remote repository
 
 [Github repostiory](https://github.com/student00010671/WT_CW2_00010671)
+
+### Online access to the web application
+
+[Glitch deployment](https://wt-cw2-00010671.glitch.me/)

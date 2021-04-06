@@ -208,6 +208,7 @@ a {
 
 .section {
   margin-top: 4em;
+  margin-bottom: 2em;
   display: flex;
   justify-content: space-evenly;
 }
@@ -238,6 +239,7 @@ a {
   float: right;
   border-bottom: 1px solid rgb(255, 233, 106);
   font-size: 1.15em;
+  margin-bottom: 2em;
 }
 
 .employee-edit:hover {
@@ -249,6 +251,7 @@ a {
   margin-right: 1em;
   border-bottom: 1px solid rgb(251, 161, 161);
   font-size: 1.15em;
+  margin-bottom: 2em;
 }
 
 .terminate:hover {
