@@ -6,7 +6,7 @@ block content
   //- if there is no one who is on medication at the moment, show user-friendly message
   if medicationEmployees.length < 1
     h1.empty No one is currently on medication
-  ul.employees-list
+  ul
     each employee in medicationEmployees
       li.employee
         a.employeeName(href='/employees/' + employee.id)= employee.firstName + ' ' + employee.lastName

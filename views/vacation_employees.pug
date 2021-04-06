@@ -6,7 +6,7 @@ block content
   //- if there is no one who is on vacation at the moment, show user-friendly message
   if vacationEmployees.length < 1
     h1.empty No one is currently on vacation
-  ul.employees-list
+  ul
     each employee in vacationEmployees
       li.employee
         a.employeeName(href='/employees/' + employee.id)= employee.firstName + ' ' + employee.lastName

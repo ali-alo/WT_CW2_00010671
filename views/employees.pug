@@ -2,7 +2,7 @@ extends layout
 
 block content 
   h1.main-heading All employees in the company
-  ul.employees-list
+  ul
     each employee in employees
       li.employee
         a.employeeName(href='/employees/' + employee.id)= employee.firstName + ' ' + employee.lastName

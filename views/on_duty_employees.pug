@@ -2,7 +2,7 @@ extends layout
 
 block content 
   h1.main-heading Employees who are currently working 
-  ul.employees-list
+  ul
     each employee in onDutyEmployees
       li.employee
         a.employeeName(href='/employees/' + employee.id)= employee.firstName + ' ' + employee.lastName

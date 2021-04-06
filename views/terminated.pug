@@ -7,9 +7,9 @@ block content
     h1.empty This list is currently empty
   ul.employees-list
     each employee in terminatedEmployees
-      li.employee
+      li.employee.terminated
         a.employeeName(href='/employees/' + employee.id + '/view')= employee.firstName + ' ' + employee.lastName
         a.edit#view(href='/employees/' + employee.id + '/view') View
         a.edit#hire(href='/employees/' + employee.id + '/hireBack') Hire back
         a.edit#delete(href='/employees/' + employee.id + '/delete') Delete
-        hr
+      hr
